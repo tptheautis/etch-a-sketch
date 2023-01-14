@@ -1,6 +1,6 @@
 //Adding divs
-const container = document.getElementById('container');
-const grid = {rows: 16, columns: 16}
+const container = document.querySelector('.container');
+const grid = {rows: 4, columns: 4}
 const total = grid.rows * grid.columns;
 
 createGrid(total);

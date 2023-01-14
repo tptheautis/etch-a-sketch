@@ -1,1 +1,30 @@
+.title {
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: 900;
+    text-shadow: 2px 2px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    margin-top: 50px;
+    border: 8px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+}
+
+.box {
+    display: grid;
+}
+
+.box {
+    color: black;
+    border: 1px solid red;
+}
