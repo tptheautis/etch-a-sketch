@@ -1,8 +1,8 @@
-//Adding divs
 const container = document.querySelector('.container');
-const grid = {rows: 4, columns: 4}
+const grid = {rows: 8, columns: 8}
 const total = grid.rows * grid.columns;
 
+//Grid
 createGrid(total);
 
 function createGrid(total) {
@@ -12,4 +12,5 @@ function createGrid(total) {
         element.textContent = `${i+1}`;
         element.classList.add('box');
     }
+    container.style.setProperty(`grid-template-columns`, `repeat(${grid.columns},1fr)`);
 }

@@ -13,6 +13,7 @@ body {
 }
 
 .container {
+    display: grid;
     margin-top: 50px;
     border: 8px solid black;
     border-radius: 10px;
