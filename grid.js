@@ -4,25 +4,15 @@ const total = grid.rows * grid.columns;
 
 //Buttons
 const draw = document.getElementById('draw');
-const rainbowMode = document.getElementById('rainbow-mode');
+const rainbow = document.getElementById('rainbow');
 const eraser = document.getElementById('eraser');
 const clear = document.getElementById('clear');
 
-draw.addEventListener('click', btn => {
-    console.log('draw');
-})
+draw.addEventListener('click', btn => modeSelection('draw'));
 
-rainbowMode.addEventListener('click', btn => {
-    console.log('rainbowMode');
-})
+rainbow.addEventListener('click', btn => modeSelection('rainbow'));
 
-eraser.addEventListener('click', btn => {
-    console.log('eraser');
-})
-
-clear.addEventListener('click', btn => {
-    console.log('clear');
-})
+eraser.addEventListener('click', btn => modeSelection('eraser'));
 
 //Grid
 createGrid(total);
@@ -72,7 +62,7 @@ const color = "00FF00"
 
 function colorChange(e) {
     if (e.type === 'mouseover' && !mouseDown) return
-    if (mode === 'rgb') {
+    if (mode === 'rainbow') {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
         const b = Math.floor(Math.random() * 256);
