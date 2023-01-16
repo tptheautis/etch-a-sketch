@@ -1,23 +1,66 @@
 .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 50px;
     font-size: 50px;
     font-weight: 900;
     text-shadow: 2px 2px;
+    color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body {
     background-color: skyblue;
+    
+}
+.btn {
+    width: 200px;
+    padding: 15px;
+    border: 2px solid white;
+    background-color: skyblue;
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar {
+    display: flex;
+
+    gap: 50px;
+
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.grid-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+    margin-bottom: 200px;
 }
 
 .container {
     display: grid;
     border-style: inset;
     margin-top: 50px;
-    border: 5px solid black;
+    border: 10px solid white;
     border-radius: 10px;
     width: 500px;
     height: 500px;
@@ -28,9 +71,8 @@ body {
 }
 
 .box {
-    color: black;
-    border: 1px solid red;
-    border-style: outset;
+    color: white;
+    border: 1pxsolid black;
 }
 
 /*Background Colors*
