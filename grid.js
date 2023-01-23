@@ -24,21 +24,30 @@ clear.addEventListener('click', btn => modeSelection('clear'))
 
 
 const grid = document.querySelector('.grid');
-const gridSize = 20
-
-
+let gridSize = 1;
+ 
 createGrid(gridSize)
 
 function createGrid(gridSize) {
+    const squares = grid.querySelectorAll('div');
+    squares.forEach((div) => div.remove()); /*Resets board everytime new slider input is recieved */
+    
     for (let i = 0; i < gridSize * gridSize; i++) {
         const square = document.createElement('div');
         grid.append(square);
-        square.textContent = `${i +1}`;
+        square.addEventListener('mouseover', colorSquare);
+        /*square.textContent = `${i +1}`;*/
     }
     grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${gridSize}), 1fr`;
 }
 
+
+
+
+function colorSquare(e) {
+    this.style.backgroundColor = 'green';
+}
 
 
 
