@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>s
+    <head>
         <meta charset="UTF-8">
         <script src="grid.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
         <link rel="stylesheet" href="ui.css">
         <title>Etch-A-Sketch</title>
     </head>
@@ -12,22 +14,24 @@
         <div class="main-container">
             <div class="sidebar">
                 <div class="button-container">
-                    <div class="color-picker"></div>
-                    <a class="button" id="draw">Draw</a>
-                    <a class="button" id="rainbow">Rainbow Mode</a>
-                    <a class="button" id="eraser">Eraser</a>
-                    <a class="button" id="clear">Clear</a>
-                </div>
-                <!--Slider-->
-                <div class="slider-container">
-                    <input type="range" class="slider" id="myRange" value="1" min="2" max="64" onchange="createGrid(this.value)">
-                    <p>Grid: <span id="value"></span></p>
+                    <a class="button" id="draw" onclick="changeColor('black')" >Draw</a>
+                    <a class="button" id="rainbow" onclick="changeColor('rainbow')" >Rainbow Mode</a>
+                    <a class="button" id="eraser" onclick="changeColor('white')" >Eraser</a>
+                    <a class="button" id="clear" onclick="clearGrid()" >Clear</a>
+                    <div class="slider-container">
+                        <input type="range" class="slider" id="myRange" value="1" min="2" max="64" onchange="createGrid(this.value)">
+                        <p class="grid-value">Grid: <span id="value"></span></p>
+                    </div>
                 </div>
             </div>
             <!--Grid-->
             <div class='grid'>
 
             </div>
+        <script>
+            
+        </script>
+
         </div>
     </body>
 </html>

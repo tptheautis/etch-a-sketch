@@ -1,7 +1,7 @@
-
-
 const slider = document.getElementById('myRange');
 const output = document.getElementById('value');
+
+let color = 'black'
 
 //slider
 output.innerHTML = slider.value;
@@ -15,23 +15,18 @@ slider.oninput = function() {
 const draw = document.getElementById('draw');
 const rainbow = document.getElementById('rainbow');
 const eraser = document.getElementById('eraser');
-const clear = document.getElementById('clear');
 
-draw.addEventListener('click', btn => modeSelection('draw'));
-rainbow.addEventListener('click', btn => modeSelection('rainbow'));
-eraser.addEventListener('click', btn => modeSelection('eraser'));
-clear.addEventListener('click', btn => modeSelection('clear'))
-
-
+//Grid creation
 const grid = document.querySelector('.grid');
 let gridSize = 1;
  
 createGrid(gridSize)
 
 function createGrid(gridSize) {
-    const squares = grid.querySelectorAll('div');
-    squares.forEach((div) => div.remove()); /*Resets board everytime new slider input is recieved */
-    
+    let clear = document.getElementById('clear');
+    let squares = grid.querySelectorAll('div');
+    squares.forEach((div) => div.remove()); 
+
     for (let i = 0; i < gridSize * gridSize; i++) {
         const square = document.createElement('div');
         grid.append(square);
@@ -44,42 +39,20 @@ function createGrid(gridSize) {
 
 
 
-
 function colorSquare(e) {
-    this.style.backgroundColor = 'green';
-}
-
-
-
-//Grid
-/*createGrid(total);
-
-function createGrid(total) {
-    for (let i = 0; i < total; i++) {
-        const divs = document.createElement('div');
-        container.append(divs);
-        divs.textContent = `${i+1}`;
-        divs.classList.add('box');
+    if (color === 'rainbow') {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+        this.style.backgroundColor = color;
     }
-    container.style.setProperty(`grid-template-columns`, `repeat(${grid.columns},1fr)`);
-}*/
-
-//Change div color
-
-const boxes = document.getElementsByClassName('box')
-
-/*function colorSelection() {
-    const color = 'green';
-    return color;
-}*/
-
-function backgroundColor() {
-    const color = 'green';
 }
 
+function changeColor(choice) {
+    color = choice;
+}
 
-for(let i=0;i<boxes.length;i++) {
-    boxes[i].onclick = function(e) {
-        e.target.style.backgroundColor=color;
-    } 
-};
+function clearGrid() {
+    let clear = document.getElementById('clear');
+    let squares = grid.querySelectorAll('div');
+    squares.forEach((div) => div.remove()); 
+}

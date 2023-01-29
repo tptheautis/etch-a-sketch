@@ -25,7 +25,7 @@ body {
 }
 
 .button {
-    width: 200px;
+    width: 150px;
     padding: 15px;
     border: 2px solid white;
     background-color: skyblue;
@@ -94,7 +94,22 @@ body {
 .button-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+}
+
+.grid-value {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.color-selection {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 15px;
 }
 
 .grid-container {
@@ -110,6 +125,7 @@ body {
     display: grid;
     margin-top: 50px;
     border: 5px solid white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 500px;
     height: 500px;
     background-color: white;
