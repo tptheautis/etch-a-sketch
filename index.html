@@ -3,8 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <script src="grid.js" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
         <link rel="stylesheet" href="ui.css">
         <title>Etch-A-Sketch</title>
     </head>
@@ -21,7 +19,7 @@
                     <a class="button" id="clear" onclick="clearGrid()" >Clear</a>
                     <div class="slider-container">
                         <input type="range" class="slider" id="myRange" value="1" min="2" max="64" onchange="createGrid(this.value)">
-                        <p class="grid-value">Grid: <span id="value"></span></p>
+                        <p class="grid-value">Grid:&nbsp<span id="value"></span></p>
                     </div>
                 </div>
             </div>
@@ -29,10 +27,6 @@
             <div class='grid'>
 
             </div>
-        <script>
-            
-        </script>
-
         </div>
     </body>
 </html>

@@ -2,23 +2,25 @@ const slider = document.getElementById('myRange');
 const output = document.getElementById('value');
 let click = false;
 let color = 'black'
+let gridSize = 2;
 
-output.innerHTML = slider.value;
+output.textContent = slider.value;
+
+output.textContent = '2 x 2'
 
 slider.oninput = function() {
-    output.innerHTML = `${this.value} x ${this.value}`;
+    output.textContent = `${this.value} x ${this.value}`;
 }
 
 const draw = document.getElementById('draw');
 const rainbow = document.getElementById('rainbow');
 const eraser = document.getElementById('eraser');
-const grid = document.querySelector('.grid');
-let gridSize = 1;
+const clear = document.getElementById('clear');
  
 createGrid(gridSize)
 
 function createGrid(gridSize) {
-    let clear = document.getElementById('clear');
+    let grid = document.querySelector('.grid');
     let squares = grid.querySelectorAll('div');
     squares.forEach((div) => div.remove()); 
 
@@ -47,18 +49,12 @@ function changeColor(choice) {
 }
 
 function clearGrid() {
-    let clear = document.getElementById('clear');
+    console.log('clear')
+    let grid = document.querySelector('.grid');
     let squares = grid.querySelectorAll('div');
-    squares.forEach((div) => div.remove()); 
+    squares.forEach((div) => (div.style.backgroundColor = 'white'));
 }
 
 document.querySelector('body').addEventListener('click', () => {
-    if (e.target.tagName != 'BUTTON') {
-        click = !click;
-        if (click) {
-            document.querySelector('.mode').textContent = "Active";
-        } else {
-            document.querySelector(".mode").textContent = 'In-Active';
-        }
-    }
-})
+    click = !click;
+});
